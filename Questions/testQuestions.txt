@@ -1,0 +1,69 @@
+
+Calculate the force exerted by a 5 kg object accelerating at 2 m/s². Use Newton's second law of motion.
+
+What is the derivative of the function f(x) = 3x² + 2x + 1 with respect to x?
+
+Explain the working principle of a transformer and its applications in electrical engineering.
+
+A car travels 150 km in 3 hours. Calculate its average speed in km/h.
+
+Describe the process of binary search and its time complexity.
+
+What are the key differences between a linked list and an array in terms of memory allocation and access time?
+
+Solve the quadratic equation x² - 4x + 4 = 0 and find the roots.
+
+Explain the concept of object-oriented programming and its four main principles.
+
+What is the significance of the Reynolds number in fluid mechanics?
+
+Calculate the area of a circle with a radius of 7 cm. Use the formula A = πr².
+
+Describe the differences between synchronous and asynchronous communication in computer networks.
+
+Prove that the integral of e^x from 0 to 1 is equal to e - 1.
+
+Explain the Heisenberg Uncertainty Principle and its implications in quantum mechanics.
+
+Solve the differential equation dy/dx = y/x with the initial condition y(1) = 2.
+
+he letter ⟨o⟩ is the fourth most common letter in the English alphabet.[4] Like the other English vowel letters, it has associated "long" and "short" pronunciations. The "long" ⟨o⟩ as in boat is actually most often a diphthong /oʊ/ (realized dialectically anywhere from [o] to [əʊ]). In English, there is also a "short" ⟨o⟩ as in fox, /ɒ/, which sounds slightly different in different dialects. In most dialects of British English, it is either an open-mid back rounded vowel [ɔ] or an open back rounded vowel [ɒ]; in American English, it is most commonly an unrounded back [ɑ] to a central vowel [a].[5]
+
+What is the Navier-Stokes equation and why is it significant in fluid dynamics?
+
+Calculate the eigenvalues of the matrix [[2, 1], [1, 2]].
+
+Explain the concept of entropy in thermodynamics and its importance.
+
+What is the Riemann Hypothesis and why is it important in number theory?
+
+Derive the formula for the period of a simple pendulum.
+
+Explain the concept of Fourier Transform and its applications in signal processing.
+
+Using Maxwell's equations, derive the wave equation for electromagnetic waves in a vacuum.
+
+Solve the Schrödinger equation for a particle in a one-dimensional infinite potential well.
+
+Explain the concept of Lagrangian mechanics and its advantages over Newtonian mechanics.
+
+Calculate the Laplace transform of the function f(t) = t²e^(-3t).
+
+Discuss the significance of the Poincaré conjecture in topology and its resolution.
+
+How can we prove that a non-repeating eigenvalue of some matrix M can have only 1 Linearly Independent eigenvector (As for Ax=0 if A is nxn matrix and if nullity > 0 it has k Linearly Independent solutions where k = nullity. If we apply it to [A-λI] since rank of [A-λI] is less than n, it can have more than 1 free columns and possibly more than 1 Linearly Independent Solution)
+
+if meta data is taken into account while calculating blocking factor, why we aren't considering it while calculating unsed space
+
+Given below are two statements:Statement (I): In datagram networks - routers hold state information about connectionsStatement (II): In virtual circuit network- ... II is incorrect(4)Statement I is incorrect but Statement II is correct
+
+Macros and preprocessor directives are handled :1) in the lexical analysis phase2) during the linking of the object modules 3) during load time4) by a modification ... the answer was B but the given answer is A! Can anyone please explain?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains.
+

@@ -1,0 +1,48 @@
+{
+  "questions": [
+    {
+      "questionId": 1,
+      "text": "Calculate the force exerted by a 5 kg object accelerating at 2 m/s². Use Newton's second law of motion."
+    },
+    {
+      "questionId": 2,
+      "text": "What is the derivative of the function f(x) = 3x² + 2x + 1 with respect to x?"
+    },
+    {
+      "questionId": 3,
+      "text": "Explain the working principle of a transformer and its applications in electrical engineering."
+    },
+    {
+      "questionId": 4,
+      "text": "A car travels 150 km in 3 hours. Calculate its average speed in km/h."
+    },
+    {
+      "questionId": 5,
+      "text": "Describe the process of binary search and its time complexity."
+    },
+    {
+      "questionId": 6,
+      "text": "What are the key differences between a linked list and an array in terms of memory allocation and access time?"
+    },
+    {
+      "questionId": 7,
+      "text": "Solve the quadratic equation x² - 4x + 4 = 0 and find the roots."
+    },
+    {
+      "questionId": 8,
+      "text": "Explain the concept of object-oriented programming and its four main principles."
+    },
+    {
+      "questionId": 9,
+      "text": "What is the significance of the Reynolds number in fluid mechanics?"
+    },
+    {
+      "questionId": 10,
+      "text": "Calculate the area of a circle with a radius of 7 cm. Use the formula A = πr²."
+    },
+    {
+      "questionId": 11,
+      "text": "Describe the differences between synchronous and asynchronous communication in computer networks."
+    }
+  ]
+}

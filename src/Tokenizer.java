@@ -4,20 +4,26 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Tokenizer {
-	
-	StringBuilder accumulator = new StringBuilder();
-	
-	List<Integer> tempList = null;
-
-	String itemToIgnore = "";
-	//Seperate with witespaces 
+	//Seprate with whitespaces 
 	//for decimal values keep if present in number else dont add
-	
+		
 	//items to not add {, ? ! " ` }
-	public void tokenize(String text ,Integer id ,  HashMap<Integer, List<Integer>> indexMap) 
+	
+	
+	static StringBuilder accumulator = new StringBuilder();
+	
+	static HashSet<Integer> tempList = null;
+
+	static String itemToIgnore = "!@#$%^&*(),<>/?:;'{}[]()~`";
+	
+	public static void index(String text ,Integer id ,  HashMap<Integer, HashSet<Integer>> indexMap) 
 	{
 
 		if(text == "")return;
+		
+		//prevent last word from getting ignored as loop terminates 
+		text = text + " ";
+		
 		
 		for(int i = 0; i < text.length(); i++) 
 		{
@@ -28,33 +34,43 @@ public class Tokenizer {
 					continue;
 				}
 				
-				if(indexMap.containsKey(text.hashCode())) 
+				if(indexMap.containsKey(accumulator.toString().toLowerCase().hashCode())) 
 				{
-					tempList = indexMap.get(text.hashCode());
+					tempList = indexMap.get(accumulator.toString().toLowerCase().hashCode());
 					tempList.add(id);
 					
-					indexMap.put(text.hashCode(), tempList);
+					indexMap.put(accumulator.
+							toString().
+							toLowerCase().
+							hashCode(), tempList);
+					
+					
+					accumulator.setLength(0);					
 					continue;
 					
 				}
 				
-				tempList = new LinkedList<>();
+				tempList = new HashSet<Integer>();
 				tempList.add(id);
 				
-				indexMap.put(text.hashCode(), tempList);
+				indexMap.put(accumulator.
+						toString().
+						toLowerCase().
+						hashCode(), tempList);
 				
+			
+				accumulator.setLength(0);
+				continue;
 				
 			}
 			
 			
-			
-			if( 
-				text.charAt(i) == ',' ||
-         		text.charAt(i) == '?' ||
-				text.charAt(i) == '!' ||
-				text.charAt(i) == '"' ||
-				text.charAt(i) == '('				
-			   )continue;
+			if(itemToIgnore.indexOf(text.charAt(i)) == -1) 
+			{
+				accumulator.append(text.charAt(i));
+				
+			}
+						
 		}
 		
 	}
