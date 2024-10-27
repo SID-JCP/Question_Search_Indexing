@@ -33,28 +33,44 @@ public class FileLoadWriteManager {
 	
 		
 
-		long start = System.currentTimeMillis();
-		
-		//1200 characters in 1.4ms WoW!
-		Search.index(indexMap, 0, textFromDB);
-		long end = System.currentTimeMillis();
-		
-		System.out.println(end - start);
 		
 
 		
-		try {
-			
-			indexData("Questions/testQuestions.txt");
-			
-			
-		} catch (FileNotFoundException e) {e.printStackTrace();}
-		
-		
+//		try {
+//			
+//			indexData("Questions/testQuestions.txt");
+//			
+//			
+//		} catch (FileNotFoundException e) {e.printStackTrace();}
+//		
+//		
 //		
 //		System.out.println("Tokens Indexed: " + indexMap.size());
-//
-//		
+		
+		Search.index(indexMap, 0, "What is are the derivative of  function f(x) = 3x² + 2x + 1 with to x?");
+		Search.index(indexMap, 1, "What are the key differences between a linked list and an array in terms of memory allocation and access time?");
+	
+		
+		
+		Search.search(indexMap, "What are the key differences between a linked list and an array in terms of memory allocation and access time?");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 //		try {
 //			writeFile(indexMap , "IndexedFile/indexedQuestion.index");
 //			
@@ -72,6 +88,7 @@ public class FileLoadWriteManager {
 //			e.printStackTrace();
 //		}
 	}
+	
 	
 	
 	private static void indexData(String path) throws FileNotFoundException 
@@ -92,7 +109,8 @@ public class FileLoadWriteManager {
 					continue;
 				}
 				
-				Tokenizer.index(currentLine, Id, indexMap);
+				
+				Search.index(indexMap, Id, currentLine);
 				currentLine = br.readLine();
 			}
 			
@@ -104,6 +122,11 @@ public class FileLoadWriteManager {
 		
 	}
 	
+	
+	
+	
+	
+	/* reading and writing the hashmap */
 	private static void writeFile(HashMap<Integer , HashSet<Integer>> indexedValues , String name) throws IOException 
 	{
 		File indexFile = new File(name);
