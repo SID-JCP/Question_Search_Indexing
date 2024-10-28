@@ -33,15 +33,15 @@ public class FileLoadWriteManager {
 	
 		
 
-		
-
-		
 		try {
 			
 			indexData("Questions/testQuestions.txt");
 			
 			
 		} catch (FileNotFoundException e) {e.printStackTrace();}
+
+		
+		
 		
 		
 		
@@ -59,7 +59,8 @@ public class FileLoadWriteManager {
 		
 		long start = System.currentTimeMillis();
 		
-		Search.search(indexMap, "Explain heisenberg proncipal");
+		
+		Search.search(indexMap, "nfa for dfa");
 		
 		long end = System.currentTimeMillis();
 		
