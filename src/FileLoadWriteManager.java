@@ -60,7 +60,7 @@ public class FileLoadWriteManager {
 		long start = System.currentTimeMillis();
 		
 		
-		Search.search(indexMap, "nfa for dfa");
+		Search.search(indexMap, "Search text goes here");
 		
 		long end = System.currentTimeMillis();
 		
