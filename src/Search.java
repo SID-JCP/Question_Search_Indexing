@@ -48,7 +48,7 @@ public class Search
 	        }
 	    }
 	        
-	    return outputCollector.toString().toUpperCase().split("\n");
+	    return outputCollector.toString().toLowerCase().split("\n");
 	}
 
 	
@@ -90,58 +90,138 @@ public class Search
 		String[] tokens = tokenize(searchText);		
 		if(tokens == null)return;
 		
-		//hashSet for a 3gram token to added in the list 
-		HashSet<Integer> tempSet = null;
+		//hashSet for retrival and setup
+		HashSet<Integer> idFromIndex = null;
 		
-		//list containing the questionID for all 3grams from their hashSets 
-		List<Integer> questonId = new LinkedList<>();
+		//list to use for putting question id with count in hashMap 
+		LinkedList<Integer> questionIdOfSameCount = null;
 		
+		//list to combine hashSets into one 
+		List<Integer> questonIdAccumulator = new LinkedList<>();
 		
-		HashMap<Integer , Integer> countOfId = new HashMap<>();
+		//list of only count of questionID
+		List<Integer> onlyCount = new LinkedList<>();
+		
+		//map the questionId to the count of those Id's to retrieve later for  match based result 
+		HashMap<Integer , LinkedList<Integer>> questionIdOfCount = new HashMap<>();
 		
 		for(String str : tokens) 
 		{
-			tempSet = indexMap.get(str.hashCode());
-			if(tempSet != null) 
+			idFromIndex = indexMap.get(str.hashCode());
+			if(idFromIndex != null) 
 			{
 				
-				questonId.addAll(tempSet);
+				questonIdAccumulator.addAll(idFromIndex);
 				
 			}
 		}
 		
-		//sort questionID 
-		Collections.sort(questonId);
+		if(questonIdAccumulator.isEmpty()) {System.out.println("No matching elemtns in Index");}
+		
+		//sort accumulated questionID
+		Collections.sort(questonIdAccumulator);
+		
 		
 		int currentQuestionId = 0;
 		int currentQuestionIdCount = 0;
 		
-		currentQuestionId = questonId.get(0);
+		currentQuestionId = questonIdAccumulator.get(0);
 		currentQuestionIdCount++;
 		
-		for(int i  = 1; i < questonId.size(); i++) 
+		//count the ocuerrence of each questionId		
+		for(int j  = 1; j < questonIdAccumulator.size(); j++) 
 		{
-			if(currentQuestionId == questonId.get(i)) 
+			if(currentQuestionId == questonIdAccumulator.get(j)) 
 			{
 				
 				currentQuestionIdCount++;
 				continue;
 			}
 			
-			//if next id is different reset count 
-			countOfId.put(currentQuestionIdCount, currentQuestionId);
+			/* After finding count put in map */
 			
-			currentQuestionId = questonId.get(i);
+			//if id with same count already exist
+			if(questionIdOfCount.containsKey(currentQuestionIdCount)) 
+			{
+				questionIdOfSameCount = questionIdOfCount.get(currentQuestionIdCount);
+				questionIdOfSameCount.add(currentQuestionId);
+				
+				questionIdOfCount.replace(currentQuestionIdCount, questionIdOfSameCount);
+				
+				
+				//get new questionID and reset count 
+				currentQuestionId = questonIdAccumulator.get(j);
+				currentQuestionIdCount = 1;
+				continue;
+			}
+			
+			//if new Id found put in new list and add
+			questionIdOfSameCount = new LinkedList<>();			
+			questionIdOfSameCount.add(currentQuestionId);
+			
+			questionIdOfCount.put(currentQuestionIdCount, questionIdOfSameCount);
 			
 			
+			//add count of Id's for retrival in order
+			onlyCount.add(currentQuestionIdCount);
+			
+			//get new questionID and reset count 
+			currentQuestionId = questonIdAccumulator.get(j);
 			currentQuestionIdCount = 1;
 			
-		}		
-		//last count
-		countOfId.put(currentQuestionIdCount, currentQuestionId);
+			
+			
+		}
 		
-		//sort keys of hashMap in descending order 
+		//for the count for last questionId 
+		if(questionIdOfCount.containsKey(currentQuestionIdCount)) 
+		{
+			questionIdOfSameCount = questionIdOfCount.get(currentQuestionIdCount);
+			questionIdOfSameCount.add(currentQuestionId);
+			
+			questionIdOfCount.replace(currentQuestionIdCount, questionIdOfSameCount);
+			
+			
+			
+		}else {
+			questionIdOfSameCount = new LinkedList<>();			
+			questionIdOfSameCount.add(currentQuestionId);
+			
+			questionIdOfCount.put(currentQuestionIdCount, questionIdOfSameCount);
 		
+			onlyCount.add(currentQuestionIdCount);
+		}
+		
+		
+		
+				
+		
+		
+		//sort keys of hashMap in descending order 		
+		Collections.sort(onlyCount);		
+		Collections.reverse(onlyCount);
+		
+		
+		
+		
+		
+		//returning max 10 questionId based on closest match
+		short results = 1;
+		List<Integer> questionId;
+		
+		for(int i : onlyCount) 
+		{
+			questionId = questionIdOfCount.get(i);
+			
+			for(int Id : questionId) 
+			{
+				System.out.println("Closest Match: " + Id);
+				results++;
+				if(results == 10)break;
+			}
+			
+			if(results == 10)break;
+		}
 	}
 	
 	

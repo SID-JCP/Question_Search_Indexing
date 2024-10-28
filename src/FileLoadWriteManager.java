@@ -36,24 +36,34 @@ public class FileLoadWriteManager {
 		
 
 		
-//		try {
-//			
-//			indexData("Questions/testQuestions.txt");
-//			
-//			
-//		} catch (FileNotFoundException e) {e.printStackTrace();}
+		try {
+			
+			indexData("Questions/testQuestions.txt");
+			
+			
+		} catch (FileNotFoundException e) {e.printStackTrace();}
+		
+		
+		
+		System.out.println("Tokens Indexed: " + indexMap.size());
+		
+//		Search.index(indexMap, 0, "What is are the derivative of  function f(x) = 3x² + 2x + 1 with to x?");
+//		Search.index(indexMap, 1, "What are the key differences between a linked list and an array in terms of memory allocation and access time?");
+//	
+//		Search.index(indexMap, 2, "Solve the quadratic equation x² - 4x + 4 = 0 and find the roots.");
+//		Search.index(indexMap, 3, "Prove that the integral of e^x from 0 to 1 is equal to e - 1.");
 //		
-//		
-//		
-//		System.out.println("Tokens Indexed: " + indexMap.size());
-		
-		Search.index(indexMap, 0, "What is are the derivative of  function f(x) = 3x² + 2x + 1 with to x?");
-		Search.index(indexMap, 1, "What are the key differences between a linked list and an array in terms of memory allocation and access time?");
-	
+//		Search.index(indexMap, 4, "Calculate the eigenvalues of the matrix [[2, 1], [1, 2]].");
+//		Search.index(indexMap, 5, "Derive the formula for the period of a simple pendulum.");
 		
 		
-		Search.search(indexMap, "What are the key differences between a linked list and an array in terms of memory allocation and access time?");
+		long start = System.currentTimeMillis();
 		
+		Search.search(indexMap, "Explain heisenberg proncipal");
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println("Time: " + (end - start));
 		
 		
 		
